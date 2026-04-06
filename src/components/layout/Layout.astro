@@ -1,0 +1,91 @@
+---
+import '../../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Salvatierra PaintWork — Pintura Fina, Rápida y Detallada | Cuarta Región',
+  description = 'Servicio de pintura interior y exterior con tecnología Airless. +10 años de experiencia. Trato directo con el dueño Pablo Salvatierra. IV Región de Coquimbo.',
+  ogImage = '/images/logo-salvatierra.jpeg',
+} = Astro.props;
+
+const GA_ID  = import.meta.env.PUBLIC_GA_ID;
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="/images/logo-salvatierra.jpeg" />
+
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content={canonicalURL} />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image"       content={new URL(ogImage, Astro.site)} />
+  <meta property="og:locale"      content="es_CL" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={new URL(ogImage, Astro.site)} />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Salvatierra PaintWork",
+    "description": "Servicio de pintura interior y exterior con tecnología Airless. Cuarta Región de Coquimbo, Chile.",
+    "telephone": "+56995088570",
+    "areaServed": "Cuarta Región de Coquimbo, Chile",
+    "serviceType": ["Pintura interior", "Pintura exterior", "Empastados", "Reparación de muros", "Eliminación de humedad"],
+    "priceRange": "$$",
+    "image": new URL(ogImage, Astro.site)
+  })} />
+
+  <!-- GTM -->
+  {GTM_ID && (
+    <script set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`} />
+  )}
+
+  <!-- GA4 -->
+  {GA_ID && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+      <script set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`} />
+    </>
+  )}
+</head>
+<body class="grain">
+  <!-- GTM noscript -->
+  {GTM_ID && (
+    <noscript>
+      <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  )}
+
+  <slot />
+
+  <!-- Vercel Analytics -->
+  <script>
+    import { inject } from '@vercel/analytics';
+    inject();
+  </script>
+</body>
+</html>

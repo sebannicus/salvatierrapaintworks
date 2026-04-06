@@ -1,0 +1,92 @@
+---
+// Placeholder testimonios — reemplazar con reseñas reales de WhatsApp
+
+interface Testimonio {
+  nombre: string;
+  ciudad: string;
+  texto: string;
+  inicial: string;
+}
+
+const testimonios: Testimonio[] = [
+  {
+    nombre: 'María González',
+    ciudad: 'La Serena',
+    inicial: 'M',
+    texto: 'Contraté a Pablo para pintar el interior de mi casa. Trabajo impecable, llegó puntual y dejó todo limpio al terminar. El resultado superó mis expectativas. 100% recomendado.',
+  },
+  {
+    nombre: 'Carlos Sepúlveda',
+    ciudad: 'Coquimbo',
+    inicial: 'C',
+    texto: 'Teníamos un problema grave de humedad en los muros. Pablo lo solucionó de raíz, no solo tapó el problema. Rápido, limpio y a un precio justo. Volvería a contratarlo sin dudar.',
+  },
+  {
+    nombre: 'Daniela Rojas',
+    ciudad: 'Ovalle',
+    inicial: 'D',
+    texto: 'Pintura de oficina completa en un fin de semana para no interrumpir el trabajo. Puntual, prolijo y con una calidad de terminación que no esperaba. Excelente relación precio-calidad.',
+  },
+];
+---
+
+<section id="testimonios" class="section-pad" style="background-color: var(--color-bg);">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <p class="text-xs tracking-widest uppercase mb-3" style="color: var(--color-text-secondary); font-family: var(--font-label);">Lo que dicen nuestros clientes</p>
+      <h2 class="text-3xl md:text-4xl font-bold" style="font-family: var(--font-display); color: var(--color-text-primary);">
+        Opiniones de quienes<br/>ya confiaron en mí
+      </h2>
+    </div>
+
+    <!-- Aviso placeholder -->
+    <p class="text-center text-sm mb-14" style="color: var(--color-text-secondary); font-family: var(--font-label);">
+      ⭐ Pronto aquí verás las reseñas reales de nuestros clientes de WhatsApp
+    </p>
+
+    <!-- Grid testimonios -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonios.map((t) => (
+        <div
+          class="flex flex-col gap-5 p-8 rounded-2xl"
+          style="background-color: var(--color-bg-surface); border: 1px solid var(--color-accent-mid);"
+        >
+          <!-- Comillas -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-accent); opacity: 0.6;" aria-hidden="true">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+
+          <!-- Texto -->
+          <p class="text-sm leading-relaxed flex-1" style="color: var(--color-text-primary);">
+            {t.texto}
+          </p>
+
+          <!-- Estrellas -->
+          <div class="flex gap-1" aria-label="5 estrellas">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color: #F59E0B;" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            ))}
+          </div>
+
+          <!-- Autor -->
+          <div class="flex items-center gap-3 pt-2" style="border-top: 1px solid var(--color-accent-mid);">
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
+              style="background-color: var(--color-bg-dark); color: var(--color-accent-mid); font-family: var(--font-label);"
+            >
+              {t.inicial}
+            </div>
+            <div>
+              <p class="font-semibold text-sm" style="font-family: var(--font-label); color: var(--color-text-primary);">{t.nombre}</p>
+              <p class="text-xs" style="color: var(--color-text-secondary);">{t.ciudad}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

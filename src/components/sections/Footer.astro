@@ -1,0 +1,64 @@
+---
+import WhatsAppButton from '../ui/WhatsAppButton.astro';
+
+const phone = '+56995088570';
+const phoneHref = 'tel:+56995088570';
+const year = new Date().getFullYear();
+---
+
+<footer id="contacto" style="background-color: var(--color-bg-dark);">
+
+  <!-- CTA band -->
+  <div class="section-pad" style="border-top: 1px solid rgba(166,149,128,0.15);">
+    <div class="max-w-3xl mx-auto px-5 text-center flex flex-col items-center gap-8">
+
+      <!-- Logo -->
+      <img
+        src="/images/logo-salvatierra.jpeg"
+        alt="Salvatierra PaintWork"
+        width="100"
+        height="100"
+        class="rounded-full opacity-90"
+        style="border: 2px solid var(--color-accent);"
+        loading="lazy"
+      />
+
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3" style="font-family: var(--font-display); color: var(--color-text-light);">
+          ¿Listo para transformar<br/>tu espacio?
+        </h2>
+        <p class="text-base" style="color: rgba(240,232,212,0.65);">
+          Escríbeme hoy. Te respondo el mismo día y preparamos tu cotización sin costo.
+        </p>
+      </div>
+
+      <WhatsAppButton label="Escribirle a Pablo ahora" size="lg" />
+
+      <!-- Teléfono directo (clickeable en mobile) -->
+      <a
+        href={phoneHref}
+        class="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
+        style="color: var(--color-accent-mid); font-family: var(--font-label);"
+        aria-label="Llamar a Salvatierra PaintWork"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/>
+        </svg>
+        {phone}
+      </a>
+
+      <!-- Zona de cobertura -->
+      <p class="text-xs tracking-widest uppercase" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">
+        Cuarta Región de Coquimbo · La Serena · Coquimbo · Ovalle y alrededores
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="py-6 px-5" style="border-top: 1px solid rgba(166,149,128,0.1);">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="color: rgba(166,149,128,0.4); font-family: var(--font-label);">
+      <p>© {year} Salvatierra PaintWork · Pablo Salvatierra · Todos los derechos reservados</p>
+      <p>Diseñado por <a href="https://gautamadigital.cl" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity" style="color: rgba(166,149,128,0.6);">Gautama Digital</a></p>
+    </div>
+  </div>
+</footer>
