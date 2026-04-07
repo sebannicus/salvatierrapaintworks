@@ -7,10 +7,25 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
   class="relative min-h-screen flex flex-col items-center justify-center text-center px-5 overflow-hidden"
   style="background-color: var(--color-bg-dark);"
 >
+  <!-- Background Video -->
+  <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="/images/logo-salvatierra.jpeg"
+      class="w-full h-full object-cover opacity-30"
+    >
+      <source src="/images/video-techo.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0E1718]/60 via-[#0E1718]/80 to-[#0E1718]"></div>
+  </div>
+
   <!-- Subtle radial background glow -->
   <div
-    class="absolute inset-0 pointer-events-none"
-    style="background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a2e30 0%, #0E1718 100%);"
+    class="absolute inset-0 pointer-events-none z-[1]"
+    style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26, 46, 48, 0.4) 0%, rgba(14, 23, 24, 0.8) 100%);"
   ></div>
 
   <!-- Decorative top border -->
@@ -22,7 +37,7 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
     <div class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 shadow-2xl flex-shrink-0" style="border-color: var(--color-accent);">
       <img
         src="/images/logo-salvatierra.jpeg"
-        alt="Salvatierra PaintWork Logo"
+        alt="Salvatierra PaintWorks"
         width="192"
         height="192"
         class="w-full h-full object-cover"
@@ -39,7 +54,7 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
         Tecnología Airless
       </span>
       <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium tracking-widest uppercase" style="background: rgba(166,149,128,0.15); border: 1px solid rgba(166,149,128,0.3); color: var(--color-accent-mid); font-family: var(--font-label);">
-        IV Región · Coquimbo
+        RM · IV Región · Coquimbo
       </span>
     </div>
 

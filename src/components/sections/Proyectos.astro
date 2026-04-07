@@ -1,0 +1,324 @@
+---
+interface Proyecto {
+  src: string;
+  alt: string;
+  categoria: string;
+  tipo: 'img' | 'video';
+  label?: string;
+}
+
+const proyectos: Proyecto[] = [
+  // Santiago College - Auditorio
+  { src: '/images/pintura-oficina-1.webp', alt: 'Auditorio Santiago College — Preparación', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-2.webp', alt: 'Auditorio Santiago College — Empastado', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-3.webp', alt: 'Auditorio Santiago College — Pintura Airless', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-4.webp', alt: 'Auditorio Santiago College — Detalles', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-5.webp', alt: 'Auditorio Santiago College — Techos', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-6.webp', alt: 'Auditorio Santiago College — Resultado final', categoria: 'santiago-college', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-oficina-7.webp', alt: 'Auditorio Santiago College — Vista general', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-8.webp', alt: 'Auditorio Santiago College — Entrega', categoria: 'santiago-college', tipo: 'img' },
+
+  // Motoaventura Chile - Fachada
+  { src: '/images/pintura-edificio-1.webp', alt: 'Motoaventura — Fachada inicial', categoria: 'motoaventura', tipo: 'img', label: 'Antes' },
+  { src: '/images/pintura-edificio-5.webp', alt: 'Motoaventura — Resultado final', categoria: 'motoaventura', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-edificio-3.webp', alt: 'Motoaventura — Proceso pintura', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-4.webp', alt: 'Motoaventura — Airless fachada', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-6.webp', alt: 'Motoaventura — Detalle terminación', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-7.webp', alt: 'Motoaventura — Acabado profesional', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-8.webp', alt: 'Motoaventura — Vista lateral', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-14.mp4', alt: 'Motoaventura — Video proceso', categoria: 'motoaventura', tipo: 'video', label: 'Video' },
+
+  // Eliminación de Humedad y Restauración
+  { src: '/images/techo-feo-baño2.webp', alt: 'Baño — Humedad inicial', categoria: 'humedad', tipo: 'img', label: 'Antes' },
+  { src: '/images/techo-lindo-baño-2.webp', alt: 'Baño — Resultado final', categoria: 'humedad', tipo: 'img', label: 'Después' },
+  { src: '/images/techo-feo-baño-1.mp4', alt: 'Proceso restauración — Video', categoria: 'humedad', tipo: 'video', label: 'Antes' },
+  { src: '/images/techo-lindo-baño-1.mp4', alt: 'Resultado final — Video', categoria: 'humedad', tipo: 'video', label: 'Después' },
+
+  // Cabañas y Barnices
+  { src: '/images/cabaña-6.webp', alt: 'Cabaña — Barniz terminado', categoria: 'cabana', tipo: 'img', label: 'Después' },
+  { src: '/images/cabaña-1.webp', alt: 'Cabaña — Fachada madera', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-3.webp', alt: 'Cabaña — Detalle barniz', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-5.webp', alt: 'Cabaña — Protección madera', categoria: 'cabana', tipo: 'img' },
+
+  // Residencial - Interior y Fachadas
+  { src: '/images/casa-antes1.webp', alt: 'Casa — Estado inicial', categoria: 'residencial', tipo: 'img', label: 'Antes' },
+  { src: '/images/casa-despues1.webp', alt: 'Casa — Pintura final', categoria: 'residencial', tipo: 'img', label: 'Después' },
+  { src: '/images/casa-antes2.webp', alt: 'Casa — Fachada sucia', categoria: 'residencial', tipo: 'img', label: 'Antes' },
+  { src: '/images/casa-despues2.webp', alt: 'Casa — Fachada renovada', categoria: 'residencial', tipo: 'img', label: 'Después' },
+  { src: '/images/video-interior-casa.mp4', alt: 'Interior Residencial — Video', categoria: 'residencial', tipo: 'video', label: 'Video' },
+];
+
+const categorias = [
+  { key: 'todas', label: 'Todos' },
+  { key: 'santiago-college', label: 'Santiago College (Auditorio)' },
+  { key: 'motoaventura', label: 'Motoaventura (Fachada)' },
+  { key: 'humedad', label: 'Eliminación Humedad' },
+  { key: 'cabana', label: 'Cabañas y Barnices' },
+  { key: 'residencial', label: 'Residencial e Interiores' },
+];
+
+const catLabels: Record<string, string> = {
+  'santiago-college': 'Santiago College',
+  'motoaventura': 'Motoaventura Chile',
+  'humedad': 'Restauración Humedad',
+  'cabana': 'Cabañas',
+  'residencial': 'Interiores',
+};
+
+// Group by category for slider view
+const grouped = categorias.slice(1).map(c => ({
+  key:   c.key,
+  label: c.label,
+  items: proyectos.filter(p => p.categoria === c.key),
+}));
+---
+
+<section id="proyectos" class="section-pad" style="background-color: var(--color-bg-dark-2);">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <!-- Header -->
+    <div class="text-center mb-10 anim-up text-balance">
+      <p class="text-xs tracking-widest uppercase mb-3 font-bold" style="color: var(--color-accent); font-family: var(--font-label);">Nuestro portafolio</p>
+      <h2 class="text-3xl md:text-5xl font-black mb-3" style="font-family: var(--font-display); color: var(--color-text-light); letter-spacing: -0.02em;">
+        Proyectos Realizados
+      </h2>
+      <p class="text-base max-w-xl mx-auto" style="color: rgba(240,232,212,0.6);">
+        Cada obra es una historia de transformación. Especialistas en acabados prolijos con tecnología Airless.
+      </p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 anim-up anim-d2">
+      {categorias.map((cat) => (
+        <button
+          class={`filter-btn px-5 md:px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${cat.key === 'todas' ? 'active' : ''}`}
+          style="border: 1.5px solid rgba(166,149,128,0.35); color: var(--color-accent-mid); font-family: var(--font-label);"
+          data-categoria={cat.key}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- ═══ VISTA "TODAS" — sliders por categoría ═══ -->
+    <div id="view-todas">
+      {grouped.map((group) => (
+        <div class="mb-14 anim-up">
+          <!-- Category label -->
+          <div class="flex items-center gap-4 mb-4">
+            <h3 class="text-sm font-bold tracking-widest uppercase" style="color: var(--color-accent-mid); font-family: var(--font-label);">{group.label}</h3>
+            <div class="flex-1 h-px" style="background: rgba(166,149,128,0.2);"></div>
+            <span class="text-xs" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">{group.items.length} elementos</span>
+          </div>
+          <!-- Horizontal slider -->
+          <div class="cat-slider-wrapper px-1 relative group">
+            <button class="slider-arrow left opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex" data-dir="left" data-target={group.key}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div
+              class="cat-slider"
+              id={`slider-${group.key}`}
+              data-slider-cat={group.key}
+            >
+              {group.items.map((p) => (
+                <div
+                  class="cat-slider-item"
+                  style="border: 1px solid rgba(166,149,128,0.15);"
+                  data-src={p.src}
+                  data-tipo={p.tipo}
+                  data-alt={p.alt}
+                >
+                  {p.tipo === 'img' ? (
+                    <img src={p.src} alt={p.alt} loading="lazy" decoding="async" />
+                  ) : (
+                    <video muted loop preload="metadata">
+                      <source src={p.src} type="video/mp4" />
+                    </video>
+                  )}
+                  <!-- Hover overlay -->
+                  <div
+                    class="absolute inset-0 flex items-end p-3 opacity-0 hover:opacity-100 transition-opacity duration-300"
+                    style="background: linear-gradient(to top, rgba(14,23,24,0.85) 0%, transparent 55%); pointer-events: none;"
+                  >
+                    <span class="text-[10px] font-bold" style="color: var(--color-accent-mid); font-family: var(--font-label);">
+                      {p.label ?? catLabels[p.categoria]}
+                    </span>
+                  </div>
+                  {p.tipo === 'video' && (
+                    <div class="absolute top-2 right-2 px-2 py-1 rounded text-[10px] font-bold" style="background: rgba(14,23,24,0.85); color: var(--color-accent-mid); font-family: var(--font-label);">
+                      ▶ Video
+                    </div>
+                  )}
+                  {p.label && p.tipo === 'img' && (
+                    <div
+                      class="absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold"
+                      style={`font-family: var(--font-label); background: ${p.label === 'Antes' ? 'rgba(220,60,60,0.8)' : p.label === 'Después' ? 'rgba(37,160,80,0.8)' : 'rgba(14,23,24,0.8)'}; color: #fff;`}
+                    >
+                      {p.label}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button class="slider-arrow right opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex" data-dir="right" data-target={group.key}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- ═══ VISTA CATEGORÍA — grid individual ═══ -->
+    <div id="view-categoria" class="hidden">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        {proyectos.map((p) => (
+          <div
+            class="gallery-card group relative cursor-pointer overflow-hidden rounded-lg aspect-square"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(166,149,128,0.15);"
+            data-categoria={p.categoria}
+            data-src={p.src}
+            data-tipo={p.tipo}
+            data-alt={p.alt}
+          >
+            {p.tipo === 'img' ? (
+              <img src={p.src} alt={p.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
+            ) : (
+              <video muted loop preload="metadata" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <source src={p.src} type="video/mp4" />
+              </video>
+            )}
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 flex items-end justify-between p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style="background: linear-gradient(to top, rgba(14,23,24,0.85) 0%, transparent 55%); pointer-events: none;"
+            >
+              <span class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--color-accent-mid); font-family: var(--font-label);">{p.label ?? catLabels[p.categoria]}</span>
+              {p.tipo === 'video' && (
+                <span class="text-[10px] font-bold px-2 py-1 rounded" style="background: rgba(14,23,24,0.8); color: var(--color-accent-mid); font-family: var(--font-label);">▶ Video</span>
+              )}
+            </div>
+            {p.label && p.tipo === 'img' && (
+              <div
+                class="absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold"
+                style={`font-family: var(--font-label); background: ${p.label === 'Antes' ? 'rgba(220,60,60,0.8)' : p.label === 'Después' ? 'rgba(37,160,80,0.8)' : 'rgba(14,23,24,0.8)'}; color: #fff;`}
+              >
+                {p.label}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 anim-up">
+      <p class="text-base mb-5" style="color: rgba(240,232,212,0.65);">Transformamos espacios con eficiencia y calidad.</p>
+      <a
+        href={`https://wa.me/56995088570?text=${encodeURIComponent('Hola Salvatierra PaintWorks, vi tus proyectos en la web y me gustaría cotizar mi trabajo')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 px-11 py-6 rounded-full text-lg font-bold btn-wa-glow"
+        style="background-color: var(--color-wa-green); color: var(--color-bg-dark); font-family: var(--font-label);"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Cotizar Proyecto
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <button id="lightbox-close" aria-label="Cerrar">&times;</button>
+  <div id="lightbox-content" class="cursor-pointer"></div>
+</div>
+
+<script>
+  // ── Filter / Vista ─────────────────────────────
+  const filterBtns  = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const viewTodas   = document.getElementById('view-todas')!;
+  const viewCat     = document.getElementById('view-categoria')!;
+  const gridCards   = viewCat.querySelectorAll<HTMLElement>('.gallery-card');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cat = btn.dataset.categoria!;
+
+      if (cat === 'todas') {
+        viewTodas.classList.remove('hidden');
+        viewCat.classList.add('hidden');
+      } else {
+        viewTodas.classList.add('hidden');
+        viewCat.classList.remove('hidden');
+        gridCards.forEach(card => {
+          card.style.display = card.dataset.categoria === cat ? '' : 'none';
+        });
+      }
+    });
+  });
+
+  // ── Lightbox ────────────────────────────────────
+  const lightbox        = document.getElementById('lightbox')!;
+  const lightboxContent = document.getElementById('lightbox-content')!;
+
+  function openLightbox(src: string, alt: string, tipo: string) {
+    lightboxContent.innerHTML = '';
+    if (tipo === 'video') {
+      const v = document.createElement('video');
+      v.src = src; v.controls = true; v.autoplay = true;
+      v.style.maxWidth = '95vw'; v.style.maxHeight = '85vh';
+      lightboxContent.appendChild(v);
+    } else {
+      const img = document.createElement('img');
+      img.src = src; img.alt = alt;
+      lightboxContent.appendChild(img);
+    }
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxContent.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  // Cerrar al clickear en el contenido (imagen o video)
+  lightboxContent.addEventListener('click', closeLightbox);
+
+  // Click on slider items
+  document.querySelectorAll<HTMLElement>('.cat-slider-item').forEach(el => {
+    el.addEventListener('click', () => openLightbox(el.dataset.src!, el.dataset.alt!, el.dataset.tipo!));
+  });
+  // Click on grid cards
+  gridCards.forEach(card => {
+    card.addEventListener('click', () => openLightbox(card.dataset.src!, card.dataset.alt!, card.dataset.tipo!));
+  });
+
+  document.getElementById('lightbox-close')!.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ── Slider Navigation Buttons ───────────────────
+  const arrows = document.querySelectorAll<HTMLButtonElement>('.slider-arrow');
+  arrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      const dir = arrow.dataset.dir;
+      const targetId = `slider-${arrow.dataset.target}`;
+      const slider = document.getElementById(targetId);
+      if (slider) {
+        const scrollAmount = slider.clientWidth * 0.8;
+        slider.scrollBy({
+          left: dir === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>

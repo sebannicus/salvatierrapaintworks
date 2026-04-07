@@ -13,51 +13,86 @@ const year = new Date().getFullYear();
     <div class="max-w-3xl mx-auto px-5 text-center flex flex-col items-center gap-8">
 
       <!-- Logo -->
-      <img
-        src="/images/logo-salvatierra.jpeg"
-        alt="Salvatierra PaintWork"
-        width="100"
-        height="100"
-        class="rounded-full opacity-90"
-        style="border: 2px solid var(--color-accent);"
-        loading="lazy"
-      />
-
+      <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--color-accent)]">
+        <img
+          src="/images/logo-salvatierra.jpeg"
+          alt="Salvatierra PaintWorks"
+          width="56"
+          height="56"
+          class="w-full h-full object-cover"
+        />
+      </div>
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-3" style="font-family: var(--font-display); color: var(--color-text-light);">
-          ¿Listo para transformar<br/>tu espacio?
+        <h2 class="text-xl font-bold tracking-tight" style="font-family: var(--font-display); color: var(--color-text-light);">
+          Salvatierra <span style="color: var(--color-accent);">PaintWorks</span>
         </h2>
-        <p class="text-base" style="color: rgba(240,232,212,0.65);">
-          Escríbeme hoy. Te respondo el mismo día y preparamos tu cotización sin costo.
-        </p>
+        <p class="text-xs mt-1" style="color: var(--color-text-secondary); font-family: var(--font-label);">Pintura profesional de estándar internacional</p>
+      </div>
+    </div>
+
+    <!-- Contacto grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10 px-5 max-w-6xl mx-auto" style="border-top: 1px solid rgba(166,149,128,0.1); border-bottom: 1px solid rgba(166,149,128,0.1);">
+      
+      <!-- Col 1: Contacto -->
+      <div>
+        <h3 class="text-sm font-black uppercase tracking-widest mb-6" style="color: var(--color-accent-mid); font-family: var(--font-label);">Contáctame</h3>
+        <div class="flex flex-col gap-4">
+          <a
+            href="tel:+56995088570"
+            class="flex items-center gap-3 text-base transition-colors hover:text-white"
+            style="color: rgba(240,232,212,0.7);"
+            aria-label="Llamar a Salvatierra PaintWorks"
+          >
+            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 border border-white/10 group-hover:bg-white/10">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            +56 9 9508 8570
+          </a>
+          <div
+            class="flex items-center gap-3 text-base"
+            style="color: rgba(240,232,212,0.7);"
+          >
+            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/50">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            Servicio en RM y Cuarta Región
+          </div>
+        </div>
       </div>
 
-      <WhatsAppButton label="Escribirle a Pablo ahora" size="lg" />
+      <!-- Col 2: Social -->
+      <div>
+        <h3 class="text-sm font-black uppercase tracking-widest mb-6" style="color: var(--color-accent-mid); font-family: var(--font-label);">Redes Sociales</h3>
+        <a
+          href={instaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 text-base transition-colors hover:text-white group"
+          style="color: rgba(240,232,212,0.7);"
+          aria-label="Instagram de Salvatierra PaintWorks"
+        >
+          <div class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 border border-white/10 group-hover:bg-white/10">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          @salvatierra.paintwork
+        </a>
+      </div>
 
-      <!-- Teléfono directo (clickeable en mobile) -->
-      <a
-        href={phoneHref}
-        class="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-        style="color: var(--color-accent-mid); font-family: var(--font-label);"
-        aria-label="Llamar a Salvatierra PaintWork"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/>
-        </svg>
-        {phone}
-      </a>
-
-      <!-- Zona de cobertura -->
-      <p class="text-xs tracking-widest uppercase" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">
-        Cuarta Región de Coquimbo · La Serena · Coquimbo · Ovalle y alrededores
-      </p>
+      <!-- Col 3: Brand Statement -->
+      <div>
+        <h3 class="text-sm font-black uppercase tracking-widest mb-4" style="color: var(--color-accent-mid); font-family: var(--font-label);">Calidad</h3>
+        <p class="text-xs leading-relaxed italic" style="color: rgba(240,232,212,0.45);">
+          SALVATIERRA PAINTWORKS CO. — Pintura profesional de confianza en RM y IV Región todo el año.
+        </p>
+      </div>
     </div>
+
   </div>
 
   <!-- Bottom bar -->
   <div class="py-6 px-5" style="border-top: 1px solid rgba(166,149,128,0.1);">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="color: rgba(166,149,128,0.4); font-family: var(--font-label);">
-      <p>© {year} Salvatierra PaintWork · Pablo Salvatierra · Todos los derechos reservados</p>
+      <p>© {year} Salvatierra PaintWorks · Pablo Salvatierra · Todos los derechos reservados</p>
       <p>Diseñado por <a href="https://gautamadigital.cl" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity" style="color: rgba(166,149,128,0.6);">Gautama Digital</a></p>
     </div>
   </div>

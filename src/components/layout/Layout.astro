@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'Salvatierra PaintWork — Pintura Fina, Rápida y Detallada | Cuarta Región',
-  description = 'Servicio de pintura interior y exterior con tecnología Airless. +10 años de experiencia. Trato directo con el dueño Pablo Salvatierra. IV Región de Coquimbo.',
+  title = 'Salvatierra PaintWorks — Pintura Fina, Rápida y Detallada | RM y Cuarta Región',
+  description = 'Servicio de pintura interior y exterior con tecnología Airless. +10 años de experiencia. Trato directo con el dueño Pablo Salvatierra. RM y IV Región de Coquimbo.',
   ogImage = '/images/logo-salvatierra.jpeg',
 } = Astro.props;
 
@@ -49,10 +49,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Salvatierra PaintWork",
-    "description": "Servicio de pintura interior y exterior con tecnología Airless. Cuarta Región de Coquimbo, Chile.",
+    "name": "Salvatierra PaintWorks",
+    "description": "Servicio de pintura interior y exterior con tecnología Airless. RM y Cuarta Región de Coquimbo, Chile.",
     "telephone": "+56995088570",
-    "areaServed": "Cuarta Región de Coquimbo, Chile",
+    "areaServed": "Región Metropolitana y Cuarta Región de Coquimbo, Chile",
     "serviceType": ["Pintura interior", "Pintura exterior", "Empastados", "Reparación de muros", "Eliminación de humedad"],
     "priceRange": "$$",
     "image": new URL(ogImage, Astro.site)
