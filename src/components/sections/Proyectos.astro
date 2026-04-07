@@ -8,54 +8,66 @@ interface Proyecto {
 }
 
 const proyectos: Proyecto[] = [
-  // Santiago College - Auditorio
-  { src: '/images/pintura-oficina-1.webp', alt: 'Auditorio Santiago College — Preparación', categoria: 'santiago-college', tipo: 'img' },
+  // Santiago College - Auditorio (pintura-oficina-*)
+  { src: '/images/pintura-oficina-1.webp', alt: 'Auditorio Santiago College — Prep', categoria: 'santiago-college', tipo: 'img' },
   { src: '/images/pintura-oficina-2.webp', alt: 'Auditorio Santiago College — Empastado', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-3.webp', alt: 'Auditorio Santiago College — Pintura Airless', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-4.webp', alt: 'Auditorio Santiago College — Detalles', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-3.webp', alt: 'Auditorio Santiago College — Pintura', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-4.webp', alt: 'Auditorio Santiago College — Proceso', categoria: 'santiago-college', tipo: 'img' },
   { src: '/images/pintura-oficina-5.webp', alt: 'Auditorio Santiago College — Techos', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-6.webp', alt: 'Auditorio Santiago College — Resultado final', categoria: 'santiago-college', tipo: 'img', label: 'Después' },
-  { src: '/images/pintura-oficina-7.webp', alt: 'Auditorio Santiago College — Vista general', categoria: 'santiago-college', tipo: 'img' },
+  { src: '/images/pintura-oficina-6.webp', alt: 'Auditorio Santiago College — Final', categoria: 'santiago-college', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-oficina-7.webp', alt: 'Auditorio Santiago College — General', categoria: 'santiago-college', tipo: 'img' },
   { src: '/images/pintura-oficina-8.webp', alt: 'Auditorio Santiago College — Entrega', categoria: 'santiago-college', tipo: 'img' },
 
-  // Motoaventura Chile - Fachada
-  { src: '/images/pintura-edificio-1.webp', alt: 'Motoaventura — Fachada inicial', categoria: 'motoaventura', tipo: 'img', label: 'Antes' },
+  // Motoaventura Chile / Edificios (pintura-edificio-*)
+  { src: '/images/pintura-edificio-1.webp', alt: 'Motoaventura — Fachada', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-3.webp', alt: 'Motoaventura — Preparación', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-4.webp', alt: 'Motoaventura — Aplicación Airless', categoria: 'motoaventura', tipo: 'img' },
   { src: '/images/pintura-edificio-5.webp', alt: 'Motoaventura — Resultado final', categoria: 'motoaventura', tipo: 'img', label: 'Después' },
-  { src: '/images/pintura-edificio-3.webp', alt: 'Motoaventura — Proceso pintura', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-4.webp', alt: 'Motoaventura — Airless fachada', categoria: 'motoaventura', tipo: 'img' },
   { src: '/images/pintura-edificio-6.webp', alt: 'Motoaventura — Detalle terminación', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-7.webp', alt: 'Motoaventura — Acabado profesional', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-7.webp', alt: 'Motoaventura — Pintura exterior', categoria: 'motoaventura', tipo: 'img' },
   { src: '/images/pintura-edificio-8.webp', alt: 'Motoaventura — Vista lateral', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-14.mp4', alt: 'Motoaventura — Video proceso', categoria: 'motoaventura', tipo: 'video', label: 'Video' },
+  { src: '/images/pintura-edificio-9.webp', alt: 'Motoaventura — Acabado impecable', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-10.webp', alt: 'Motoaventura — Fachada comercial', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-11.webp', alt: 'Motoaventura — Detalles finos', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-12.webp', alt: 'Motoaventura — Proyecto terminado', categoria: 'motoaventura', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-edificio-15.webp', alt: 'Motoaventura — Vista general', categoria: 'motoaventura', tipo: 'img' },
+  { src: '/images/pintura-edificio-14.mp4',  alt: 'Motoaventura — Video proceso', categoria: 'motoaventura', tipo: 'video', label: 'Video' },
 
-  // Eliminación de Humedad y Restauración
-  { src: '/images/techo-feo-baño2.webp', alt: 'Baño — Humedad inicial', categoria: 'humedad', tipo: 'img', label: 'Antes' },
-  { src: '/images/techo-lindo-baño-2.webp', alt: 'Baño — Resultado final', categoria: 'humedad', tipo: 'img', label: 'Después' },
-  { src: '/images/techo-feo-baño-1.mp4', alt: 'Proceso restauración — Video', categoria: 'humedad', tipo: 'video', label: 'Antes' },
-  { src: '/images/techo-lindo-baño-1.mp4', alt: 'Resultado final — Video', categoria: 'humedad', tipo: 'video', label: 'Después' },
+  // Humedad y Restauración (techo-* y video-techo)
+  { src: '/images/techo-feo-baño2.webp', alt: 'Humedad — Estado Inicial', categoria: 'humedad', tipo: 'img', label: 'Antes' },
+  { src: '/images/techo-lindo-baño-2.webp', alt: 'Humedad — Resultado Final', categoria: 'humedad', tipo: 'img', label: 'Después' },
+  { src: '/images/techo-feo-baño-1.mp4', alt: 'Humedad — Video Inicial', categoria: 'humedad', tipo: 'video', label: 'Antes' },
+  { src: '/images/techo-lindo-baño-1.mp4', alt: 'Humedad — Video Final', categoria: 'humedad', tipo: 'video', label: 'Después' },
+  { src: '/images/video-techo.mp4', alt: 'Humedad — Video Proceso', categoria: 'humedad', tipo: 'video', label: 'Video' },
 
-  // Cabañas y Barnices
-  { src: '/images/cabaña-6.webp', alt: 'Cabaña — Barniz terminado', categoria: 'cabana', tipo: 'img', label: 'Después' },
-  { src: '/images/cabaña-1.webp', alt: 'Cabaña — Fachada madera', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-3.webp', alt: 'Cabaña — Detalle barniz', categoria: 'cabana', tipo: 'img' },
+  // Cabañas y Barnices (cabaña-*)
+  { src: '/images/cabaña-1.webp', alt: 'Cabaña — Fachada', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-2.webp', alt: 'Cabaña — Barnizado', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-3.webp', alt: 'Cabaña — Detalle vigas', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-4.webp', alt: 'Cabaña — Exterior', categoria: 'cabana', tipo: 'img' },
   { src: '/images/cabaña-5.webp', alt: 'Cabaña — Protección madera', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-6.webp', alt: 'Cabaña — Resultado Final', categoria: 'cabana', tipo: 'img', label: 'Después' },
+  { src: '/images/cabaña-7.webp', alt: 'Cabaña — Vista Lateral', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-8.webp', alt: 'Cabaña — Acabado Brillo', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-9.webp', alt: 'Cabaña — Terminaciones', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista', categoria: 'cabana', tipo: 'img' },
 
-  // Residencial - Interior y Fachadas
-  { src: '/images/casa-antes1.webp', alt: 'Casa — Estado inicial', categoria: 'residencial', tipo: 'img', label: 'Antes' },
-  { src: '/images/casa-despues1.webp', alt: 'Casa — Pintura final', categoria: 'residencial', tipo: 'img', label: 'Después' },
-  { src: '/images/casa-antes2.webp', alt: 'Casa — Fachada sucia', categoria: 'residencial', tipo: 'img', label: 'Antes' },
-  { src: '/images/casa-despues2.webp', alt: 'Casa — Fachada renovada', categoria: 'residencial', tipo: 'img', label: 'Después' },
-  { src: '/images/video-interior-casa.mp4', alt: 'Interior Residencial — Video', categoria: 'residencial', tipo: 'video', label: 'Video' },
+  // Residencial - Interior y Fachadas de Casas (casa-* y video-interior-casa)
+  { src: '/images/casa-antes1.webp', alt: 'Casa — Humedad Fachada', categoria: 'residencial', tipo: 'img', label: 'Antes' },
+  { src: '/images/casa-despues1.webp', alt: 'Casa — Fachada Renovada', categoria: 'residencial', tipo: 'img', label: 'Después' },
+  { src: '/images/casa-antes2.webp', alt: 'Casa — Fachada Inicial', categoria: 'residencial', tipo: 'img', label: 'Antes' },
+  { src: '/images/casa-despues2.webp', alt: 'Casa — Fachada Terminada', categoria: 'residencial', tipo: 'img', label: 'Después' },
+  { src: '/images/casa-despues3.webp', alt: 'Casa — Acabado Detalle', categoria: 'residencial', tipo: 'img', label: 'Después' },
+  { src: '/images/video-interior-casa.mp4', alt: 'Casa — Video Interior', categoria: 'residencial', tipo: 'video', label: 'Video' },
 ];
 
 const categorias = [
   { key: 'todas', label: 'Todos' },
-  { key: 'santiago-college', label: 'Santiago College (Auditorio)' },
-  { key: 'motoaventura', label: 'Motoaventura (Fachada)' },
-  { key: 'humedad', label: 'Eliminación Humedad' },
-  { key: 'cabana', label: 'Cabañas y Barnices' },
-  { key: 'residencial', label: 'Residencial e Interiores' },
+  { key: 'santiago-college', label: 'Santiago College' },
+  { key: 'motoaventura', label: 'Motoaventura' },
+  { key: 'humedad', label: 'Humedad' },
+  { key: 'cabana', label: 'Cabañas' },
+  { key: 'residencial', label: 'Casas' },
 ];
 
 const catLabels: Record<string, string> = {
@@ -79,7 +91,7 @@ const grouped = categorias.slice(1).map(c => ({
 
     <!-- Header -->
     <div class="text-center mb-10 anim-up text-balance">
-      <p class="text-xs tracking-widest uppercase mb-3 font-bold" style="color: var(--color-accent); font-family: var(--font-label);">Nuestro portafolio</p>
+      <p class="text-xs tracking-widest uppercase mb-3 font-bold" style="color: var(--color-accent); font-family: var(--font-label);">Nuestra galería completa</p>
       <h2 class="text-3xl md:text-5xl font-black mb-3" style="font-family: var(--font-display); color: var(--color-text-light); letter-spacing: -0.02em;">
         Proyectos Realizados
       </h2>
@@ -92,7 +104,7 @@ const grouped = categorias.slice(1).map(c => ({
     <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 anim-up anim-d2">
       {categorias.map((cat) => (
         <button
-          class={`filter-btn px-5 md:px-6 py-3 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${cat.key === 'todas' ? 'active' : ''}`}
+          class={`filter-btn px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${cat.key === 'todas' ? 'active' : ''}`}
           style="border: 1.5px solid rgba(166,149,128,0.35); color: var(--color-accent-mid); font-family: var(--font-label);"
           data-categoria={cat.key}
         >
@@ -107,9 +119,9 @@ const grouped = categorias.slice(1).map(c => ({
         <div class="mb-14 anim-up">
           <!-- Category label -->
           <div class="flex items-center gap-4 mb-4">
-            <h3 class="text-sm font-bold tracking-widest uppercase" style="color: var(--color-accent-mid); font-family: var(--font-label);">{group.label}</h3>
+            <h3 class="text-xs font-bold tracking-widest uppercase" style="color: var(--color-accent-mid); font-family: var(--font-label);">{group.label}</h3>
             <div class="flex-1 h-px" style="background: rgba(166,149,128,0.2);"></div>
-            <span class="text-xs" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">{group.items.length} elementos</span>
+            <span class="text-[10px]" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">{group.items.length} elementos</span>
           </div>
           <!-- Horizontal slider -->
           <div class="cat-slider-wrapper px-1 relative group">
