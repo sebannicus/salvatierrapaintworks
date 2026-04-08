@@ -21,7 +21,8 @@ const proyectos: Proyecto[] = [
   { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista',  categoria: 'cabana', tipo: 'img' },
 
   // Casa
-  { src: '/images/casa-antes1.webp',       alt: 'Casa — Fachada Inicial',  categoria: 'casa', tipo: 'img',   label: 'Antes' },
+  { src: '/images/casa-despues-0.mp4',      alt: 'Casa — Video Resultado',  categoria: 'casa', tipo: 'video', label: 'Después' },
+  { src: '/images/casa-antes1.webp',        alt: 'Casa — Fachada Inicial',  categoria: 'casa', tipo: 'img',   label: 'Antes' },
   { src: '/images/casa-despues1.webp',      alt: 'Casa — Fachada Renovada', categoria: 'casa', tipo: 'img',   label: 'Después' },
   { src: '/images/casa-antes2.webp',        alt: 'Casa — Fachada Inicial',  categoria: 'casa', tipo: 'img',   label: 'Antes' },
   { src: '/images/casa-despues2.webp',      alt: 'Casa — Fachada Terminada',categoria: 'casa', tipo: 'img',   label: 'Después' },
@@ -53,6 +54,15 @@ const proyectos: Proyecto[] = [
   { src: '/images/pintura-edificio-15.webp', alt: 'Edificio — Vista General',      categoria: 'edificio', tipo: 'img' },
   { src: '/images/pintura-edificio-14.mp4',  alt: 'Edificio — Video Proceso',      categoria: 'edificio', tipo: 'video', label: 'Video' },
 
+  // Tiendas
+  { src: '/images/exterior-tienda-santiago-pintura-1.webp', alt: 'Tienda — Exterior Santiago 1', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-2.webp', alt: 'Tienda — Exterior Santiago 2', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-3.webp', alt: 'Tienda — Exterior Santiago 3', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-4.webp', alt: 'Tienda — Exterior Santiago 4', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-5.webp', alt: 'Tienda — Exterior Santiago 5', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-7.webp', alt: 'Tienda — Exterior Santiago 7', categoria: 'tienda', tipo: 'img' },
+  { src: '/images/exterior-tienda-santiago-pintura-6.mp4',  alt: 'Tienda — Video Proceso',       categoria: 'tienda', tipo: 'video', label: 'Video' },
+
   // Restauración
   { src: '/images/restauracion-1-laserena-santiago.webp', alt: 'Restauración — Trabajo 1', categoria: 'restauracion', tipo: 'img' },
   { src: '/images/restauracion-2-laserena-santiago.webp', alt: 'Restauración — Trabajo 2', categoria: 'restauracion', tipo: 'img' },
@@ -68,6 +78,7 @@ const proyectos: Proyecto[] = [
 const categorias = [
   { key: 'cabana',       label: 'Cabaña' },
   { key: 'casa',         label: 'Casa' },
+  { key: 'tienda',       label: 'Tiendas' },
   { key: 'oficina',      label: 'Oficina' },
   { key: 'edificio',     label: 'Edificio' },
   { key: 'restauracion', label: 'Restauración' },
@@ -76,6 +87,7 @@ const categorias = [
 const catLabels: Record<string, string> = {
   'cabana':       'Cabaña',
   'casa':         'Casa',
+  'tienda':       'Tiendas',
   'oficina':      'Oficina',
   'edificio':     'Edificio',
   'restauracion': 'Restauración',
