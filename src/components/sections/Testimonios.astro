@@ -34,7 +34,7 @@ const testimonios: Testimonio[] = [
   <div class="max-w-6xl mx-auto px-5">
 
     <!-- Header -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-4 reveal">
       <p class="text-xs tracking-widest uppercase mb-3" style="color: var(--color-text-secondary); font-family: var(--font-label);">Lo que dicen nuestros clientes</p>
       <h2 class="text-3xl md:text-4xl font-bold" style="font-family: var(--font-display); color: var(--color-text-primary);">
         Opiniones de quienes<br/>ya confiaron en mí
@@ -42,15 +42,15 @@ const testimonios: Testimonio[] = [
     </div>
 
     <!-- Aviso placeholder -->
-    <p class="text-center text-sm mb-14" style="color: var(--color-text-secondary); font-family: var(--font-label);">
+    <p class="text-center text-sm mb-14 reveal delay-1" style="color: var(--color-text-secondary); font-family: var(--font-label);">
       ⭐ Pronto aquí verás las reseñas reales de nuestros clientes de WhatsApp
     </p>
 
     <!-- Grid testimonios -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {testimonios.map((t) => (
+      {testimonios.map((t, i) => (
         <div
-          class="flex flex-col gap-5 p-8 rounded-2xl"
+          class={`flex flex-col gap-5 p-8 rounded-2xl reveal delay-${i + 1}`}
           style="background-color: var(--color-bg-surface); border: 1px solid var(--color-accent-mid);"
         >
           <!-- Comillas -->

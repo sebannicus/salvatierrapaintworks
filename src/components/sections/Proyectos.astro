@@ -8,78 +8,81 @@ interface Proyecto {
 }
 
 const proyectos: Proyecto[] = [
-  // Santiago College - Auditorio (pintura-oficina-*)
-  { src: '/images/pintura-oficina-1.webp', alt: 'Auditorio Santiago College — Prep', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-2.webp', alt: 'Auditorio Santiago College — Empastado', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-3.webp', alt: 'Auditorio Santiago College — Pintura', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-4.webp', alt: 'Auditorio Santiago College — Proceso', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-5.webp', alt: 'Auditorio Santiago College — Techos', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-6.webp', alt: 'Auditorio Santiago College — Final', categoria: 'santiago-college', tipo: 'img', label: 'Después' },
-  { src: '/images/pintura-oficina-7.webp', alt: 'Auditorio Santiago College — General', categoria: 'santiago-college', tipo: 'img' },
-  { src: '/images/pintura-oficina-8.webp', alt: 'Auditorio Santiago College — Entrega', categoria: 'santiago-college', tipo: 'img' },
+  // Cabaña
+  { src: '/images/cabaña-1.webp',  alt: 'Cabaña — Fachada',           categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-2.webp',  alt: 'Cabaña — Barnizado',         categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-3.webp',  alt: 'Cabaña — Detalle vigas',     categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-4.webp',  alt: 'Cabaña — Exterior',          categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-5.webp',  alt: 'Cabaña — Protección madera', categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-6.webp',  alt: 'Cabaña — Resultado Final',   categoria: 'cabana', tipo: 'img', label: 'Después' },
+  { src: '/images/cabaña-7.webp',  alt: 'Cabaña — Vista Lateral',     categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-8.webp',  alt: 'Cabaña — Acabado Brillo',    categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-9.webp',  alt: 'Cabaña — Terminaciones',     categoria: 'cabana', tipo: 'img' },
+  { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista',  categoria: 'cabana', tipo: 'img' },
 
-  // Motoaventura Chile / Edificios (pintura-edificio-*)
-  { src: '/images/pintura-edificio-1.webp', alt: 'Motoaventura — Fachada', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-3.webp', alt: 'Motoaventura — Preparación', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-4.webp', alt: 'Motoaventura — Aplicación Airless', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-5.webp', alt: 'Motoaventura — Resultado final', categoria: 'motoaventura', tipo: 'img', label: 'Después' },
-  { src: '/images/pintura-edificio-6.webp', alt: 'Motoaventura — Detalle terminación', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-7.webp', alt: 'Motoaventura — Pintura exterior', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-8.webp', alt: 'Motoaventura — Vista lateral', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-9.webp', alt: 'Motoaventura — Acabado impecable', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-10.webp', alt: 'Motoaventura — Fachada comercial', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-11.webp', alt: 'Motoaventura — Detalles finos', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-12.webp', alt: 'Motoaventura — Proyecto terminado', categoria: 'motoaventura', tipo: 'img', label: 'Después' },
-  { src: '/images/pintura-edificio-15.webp', alt: 'Motoaventura — Vista general', categoria: 'motoaventura', tipo: 'img' },
-  { src: '/images/pintura-edificio-14.mp4',  alt: 'Motoaventura — Video proceso', categoria: 'motoaventura', tipo: 'video', label: 'Video' },
+  // Casa
+  { src: '/images/casa-antes1.webp',       alt: 'Casa — Fachada Inicial',  categoria: 'casa', tipo: 'img',   label: 'Antes' },
+  { src: '/images/casa-despues1.webp',      alt: 'Casa — Fachada Renovada', categoria: 'casa', tipo: 'img',   label: 'Después' },
+  { src: '/images/casa-antes2.webp',        alt: 'Casa — Fachada Inicial',  categoria: 'casa', tipo: 'img',   label: 'Antes' },
+  { src: '/images/casa-despues2.webp',      alt: 'Casa — Fachada Terminada',categoria: 'casa', tipo: 'img',   label: 'Después' },
+  { src: '/images/casa-despues3.webp',      alt: 'Casa — Acabado Detalle',  categoria: 'casa', tipo: 'img',   label: 'Después' },
+  { src: '/images/video-interior-casa.mp4', alt: 'Casa — Video Interior',   categoria: 'casa', tipo: 'video', label: 'Video' },
 
-  // Humedad y Restauración (techo-* y video-techo)
-  { src: '/images/techo-feo-baño2.webp', alt: 'Humedad — Estado Inicial', categoria: 'humedad', tipo: 'img', label: 'Antes' },
-  { src: '/images/techo-lindo-baño-2.webp', alt: 'Humedad — Resultado Final', categoria: 'humedad', tipo: 'img', label: 'Después' },
-  { src: '/images/techo-feo-baño-1.mp4', alt: 'Humedad — Video Inicial', categoria: 'humedad', tipo: 'video', label: 'Antes' },
-  { src: '/images/techo-lindo-baño-1.mp4', alt: 'Humedad — Video Final', categoria: 'humedad', tipo: 'video', label: 'Después' },
-  { src: '/images/video-techo.mp4', alt: 'Humedad — Video Proceso', categoria: 'humedad', tipo: 'video', label: 'Video' },
+  // Oficina
+  { src: '/images/pintura-oficina-1.webp', alt: 'Oficina — Preparación',   categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-2.webp', alt: 'Oficina — Empastado',     categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-3.webp', alt: 'Oficina — Pintura',       categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-4.webp', alt: 'Oficina — Proceso',       categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-5.webp', alt: 'Oficina — Techos',        categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-6.webp', alt: 'Oficina — Final',         categoria: 'oficina', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-oficina-7.webp', alt: 'Oficina — Vista General', categoria: 'oficina', tipo: 'img' },
+  { src: '/images/pintura-oficina-8.webp', alt: 'Oficina — Entrega',       categoria: 'oficina', tipo: 'img' },
 
-  // Cabañas y Barnices (cabaña-*)
-  { src: '/images/cabaña-1.webp', alt: 'Cabaña — Fachada', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-2.webp', alt: 'Cabaña — Barnizado', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-3.webp', alt: 'Cabaña — Detalle vigas', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-4.webp', alt: 'Cabaña — Exterior', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-5.webp', alt: 'Cabaña — Protección madera', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-6.webp', alt: 'Cabaña — Resultado Final', categoria: 'cabana', tipo: 'img', label: 'Después' },
-  { src: '/images/cabaña-7.webp', alt: 'Cabaña — Vista Lateral', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-8.webp', alt: 'Cabaña — Acabado Brillo', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-9.webp', alt: 'Cabaña — Terminaciones', categoria: 'cabana', tipo: 'img' },
-  { src: '/images/cabaña-10.webp', alt: 'Cabaña — Vigas a la vista', categoria: 'cabana', tipo: 'img' },
+  // Edificio
+  { src: '/images/pintura-edificio-1.webp',  alt: 'Edificio — Fachada',            categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-3.webp',  alt: 'Edificio — Preparación',        categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-4.webp',  alt: 'Edificio — Aplicación Airless', categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-5.webp',  alt: 'Edificio — Resultado Final',    categoria: 'edificio', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-edificio-6.webp',  alt: 'Edificio — Detalle Terminación',categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-7.webp',  alt: 'Edificio — Pintura Exterior',   categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-8.webp',  alt: 'Edificio — Vista Lateral',      categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-9.webp',  alt: 'Edificio — Acabado Impecable',  categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-10.webp', alt: 'Edificio — Fachada Comercial',  categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-11.webp', alt: 'Edificio — Detalles Finos',     categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-12.webp', alt: 'Edificio — Proyecto Terminado', categoria: 'edificio', tipo: 'img', label: 'Después' },
+  { src: '/images/pintura-edificio-15.webp', alt: 'Edificio — Vista General',      categoria: 'edificio', tipo: 'img' },
+  { src: '/images/pintura-edificio-14.mp4',  alt: 'Edificio — Video Proceso',      categoria: 'edificio', tipo: 'video', label: 'Video' },
 
-  // Residencial - Interior y Fachadas de Casas (casa-* y video-interior-casa)
-  { src: '/images/casa-antes1.webp', alt: 'Casa — Humedad Fachada', categoria: 'residencial', tipo: 'img', label: 'Antes' },
-  { src: '/images/casa-despues1.webp', alt: 'Casa — Fachada Renovada', categoria: 'residencial', tipo: 'img', label: 'Después' },
-  { src: '/images/casa-antes2.webp', alt: 'Casa — Fachada Inicial', categoria: 'residencial', tipo: 'img', label: 'Antes' },
-  { src: '/images/casa-despues2.webp', alt: 'Casa — Fachada Terminada', categoria: 'residencial', tipo: 'img', label: 'Después' },
-  { src: '/images/casa-despues3.webp', alt: 'Casa — Acabado Detalle', categoria: 'residencial', tipo: 'img', label: 'Después' },
-  { src: '/images/video-interior-casa.mp4', alt: 'Casa — Video Interior', categoria: 'residencial', tipo: 'video', label: 'Video' },
+  // Restauración
+  { src: '/images/restauracion-1-laserena-santiago.webp', alt: 'Restauración — Trabajo 1', categoria: 'restauracion', tipo: 'img' },
+  { src: '/images/restauracion-2-laserena-santiago.webp', alt: 'Restauración — Trabajo 2', categoria: 'restauracion', tipo: 'img' },
+  { src: '/images/restauracion-3-laserena-santiago.webp', alt: 'Restauración — Trabajo 3', categoria: 'restauracion', tipo: 'img' },
+  { src: '/images/restauracion-4-laserena-santiago.webp', alt: 'Restauración — Trabajo 4', categoria: 'restauracion', tipo: 'img' },
+  { src: '/images/techo-feo-baño2.webp',    alt: 'Restauración — Techo con Humedad',  categoria: 'restauracion', tipo: 'img',   label: 'Antes' },
+  { src: '/images/techo-lindo-baño-2.webp', alt: 'Restauración — Techo Restaurado',   categoria: 'restauracion', tipo: 'img',   label: 'Después' },
+  { src: '/images/techo-feo-baño-1.mp4',    alt: 'Restauración — Video Antes',        categoria: 'restauracion', tipo: 'video', label: 'Antes' },
+  { src: '/images/techo-lindo-baño-1.mp4',  alt: 'Restauración — Video Después',      categoria: 'restauracion', tipo: 'video', label: 'Después' },
+  { src: '/images/video-techo.mp4',         alt: 'Restauración — Video Proceso',      categoria: 'restauracion', tipo: 'video', label: 'Video' },
 ];
 
 const categorias = [
-  { key: 'todas', label: 'Todos' },
-  { key: 'santiago-college', label: 'Santiago College' },
-  { key: 'motoaventura', label: 'Motoaventura' },
-  { key: 'humedad', label: 'Humedad' },
-  { key: 'cabana', label: 'Cabañas' },
-  { key: 'residencial', label: 'Casas' },
+  { key: 'cabana',       label: 'Cabaña' },
+  { key: 'casa',         label: 'Casa' },
+  { key: 'oficina',      label: 'Oficina' },
+  { key: 'edificio',     label: 'Edificio' },
+  { key: 'restauracion', label: 'Restauración' },
 ];
 
 const catLabels: Record<string, string> = {
-  'santiago-college': 'Santiago College',
-  'motoaventura': 'Motoaventura Chile',
-  'humedad': 'Restauración Humedad',
-  'cabana': 'Cabañas',
-  'residencial': 'Interiores',
+  'cabana':       'Cabaña',
+  'casa':         'Casa',
+  'oficina':      'Oficina',
+  'edificio':     'Edificio',
+  'restauracion': 'Restauración',
 };
 
-// Group by category for slider view
-const grouped = categorias.slice(1).map(c => ({
+// All categories grouped for stacked sliders
+const grouped = categorias.map(c => ({
   key:   c.key,
   label: c.label,
   items: proyectos.filter(p => p.categoria === c.key),
@@ -90,49 +93,48 @@ const grouped = categorias.slice(1).map(c => ({
   <div class="max-w-6xl mx-auto px-5">
 
     <!-- Header -->
-    <div class="text-center mb-10 anim-up text-balance">
-      <p class="text-xs tracking-widest uppercase mb-3 font-bold" style="color: var(--color-accent); font-family: var(--font-label);">Nuestra galería completa</p>
+    <div class="text-center mb-10 reveal">
+      <p class="text-xs tracking-widest uppercase mb-3 font-bold" style="color: var(--color-accent); font-family: var(--font-label);">Galería de trabajos</p>
       <h2 class="text-3xl md:text-5xl font-black mb-3" style="font-family: var(--font-display); color: var(--color-text-light); letter-spacing: -0.02em;">
         Proyectos Realizados
       </h2>
       <p class="text-base max-w-xl mx-auto" style="color: rgba(240,232,212,0.6);">
-        Cada obra es una historia de transformación. Especialistas en acabados prolijos con tecnología Airless.
+        Trabajos en la Región Metropolitana y la Cuarta Región de Coquimbo. Cada obra, una transformación real.
       </p>
     </div>
 
-    <!-- Filtros -->
-    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 anim-up anim-d2">
+    <!-- Navegación rápida por categoría -->
+    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 reveal delay-1">
       {categorias.map((cat) => (
-        <button
-          class={`filter-btn px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${cat.key === 'todas' ? 'active' : ''}`}
-          style="border: 1.5px solid rgba(166,149,128,0.35); color: var(--color-accent-mid); font-family: var(--font-label);"
-          data-categoria={cat.key}
+        <a
+          href={`#cat-${cat.key}`}
+          class="nav-cat-btn px-4 md:px-6 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all"
+          style="border: 1.5px solid rgba(166,149,128,0.35); color: var(--color-accent-mid); font-family: var(--font-label); text-decoration: none;"
+          data-cat={cat.key}
         >
           {cat.label}
-        </button>
+        </a>
       ))}
     </div>
 
-    <!-- ═══ VISTA "TODAS" — sliders por categoría ═══ -->
-    <div id="view-todas">
+    <!-- ═══ TODAS LAS CATEGORÍAS VISIBLES ═══ -->
+    <div class="flex flex-col gap-14">
       {grouped.map((group) => (
-        <div class="mb-14 anim-up">
-          <!-- Category label -->
-          <div class="flex items-center gap-4 mb-4">
-            <h3 class="text-xs font-bold tracking-widest uppercase" style="color: var(--color-accent-mid); font-family: var(--font-label);">{group.label}</h3>
+        <div id={`cat-${group.key}`} class="reveal">
+          <!-- Etiqueta categoría -->
+          <div class="flex items-center gap-4 mb-5">
+            <h3 class="text-sm font-bold tracking-widest uppercase" style="color: var(--color-accent-mid); font-family: var(--font-label);">
+              {group.label}
+            </h3>
             <div class="flex-1 h-px" style="background: rgba(166,149,128,0.2);"></div>
-            <span class="text-[10px]" style="color: rgba(166,149,128,0.5); font-family: var(--font-label);">{group.items.length} elementos</span>
+            <span class="text-[10px]" style="color: rgba(166,149,128,0.45); font-family: var(--font-label);">{group.items.length} trabajos</span>
           </div>
-          <!-- Horizontal slider -->
+          <!-- Slider horizontal -->
           <div class="cat-slider-wrapper px-1 relative group">
             <button class="slider-arrow left opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex" data-dir="left" data-target={group.key}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
-            <div
-              class="cat-slider"
-              id={`slider-${group.key}`}
-              data-slider-cat={group.key}
-            >
+            <div class="cat-slider" id={`slider-${group.key}`}>
               {group.items.map((p) => (
                 <div
                   class="cat-slider-item"
@@ -148,7 +150,6 @@ const grouped = categorias.slice(1).map(c => ({
                       <source src={p.src} type="video/mp4" />
                     </video>
                   )}
-                  <!-- Hover overlay -->
                   <div
                     class="absolute inset-0 flex items-end p-3 opacity-0 hover:opacity-100 transition-opacity duration-300"
                     style="background: linear-gradient(to top, rgba(14,23,24,0.85) 0%, transparent 55%); pointer-events: none;"
@@ -162,7 +163,7 @@ const grouped = categorias.slice(1).map(c => ({
                       ▶ Video
                     </div>
                   )}
-                  {p.label && p.tipo === 'img' && (
+                  {p.label && (
                     <div
                       class="absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold"
                       style={`font-family: var(--font-label); background: ${p.label === 'Antes' ? 'rgba(220,60,60,0.8)' : p.label === 'Después' ? 'rgba(37,160,80,0.8)' : 'rgba(14,23,24,0.8)'}; color: #fff;`}
@@ -181,53 +182,11 @@ const grouped = categorias.slice(1).map(c => ({
       ))}
     </div>
 
-    <!-- ═══ VISTA CATEGORÍA — grid individual ═══ -->
-    <div id="view-categoria" class="hidden">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-        {proyectos.map((p) => (
-          <div
-            class="gallery-card group relative cursor-pointer overflow-hidden rounded-lg aspect-square"
-            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(166,149,128,0.15);"
-            data-categoria={p.categoria}
-            data-src={p.src}
-            data-tipo={p.tipo}
-            data-alt={p.alt}
-          >
-            {p.tipo === 'img' ? (
-              <img src={p.src} alt={p.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
-            ) : (
-              <video muted loop preload="metadata" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <source src={p.src} type="video/mp4" />
-              </video>
-            )}
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 flex items-end justify-between p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style="background: linear-gradient(to top, rgba(14,23,24,0.85) 0%, transparent 55%); pointer-events: none;"
-            >
-              <span class="text-[10px] font-bold uppercase tracking-wider" style="color: var(--color-accent-mid); font-family: var(--font-label);">{p.label ?? catLabels[p.categoria]}</span>
-              {p.tipo === 'video' && (
-                <span class="text-[10px] font-bold px-2 py-1 rounded" style="background: rgba(14,23,24,0.8); color: var(--color-accent-mid); font-family: var(--font-label);">▶ Video</span>
-              )}
-            </div>
-            {p.label && p.tipo === 'img' && (
-              <div
-                class="absolute top-2 left-2 px-2 py-1 rounded text-[10px] font-bold"
-                style={`font-family: var(--font-label); background: ${p.label === 'Antes' ? 'rgba(220,60,60,0.8)' : p.label === 'Después' ? 'rgba(37,160,80,0.8)' : 'rgba(14,23,24,0.8)'}; color: #fff;`}
-              >
-                {p.label}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-
     <!-- CTA -->
     <div class="text-center mt-12 anim-up">
       <p class="text-base mb-5" style="color: rgba(240,232,212,0.65);">Transformamos espacios con eficiencia y calidad.</p>
       <a
-        href={`https://wa.me/56995088570?text=${encodeURIComponent('Hola Salvatierra PaintWorks, vi tus proyectos en la web y me gustaría cotizar mi trabajo')}`}
+        href={`https://wa.me/56995088570?text=${encodeURIComponent('Hola Salvatierra Paintworks, vi tus proyectos en la web y me gustaría cotizar mi trabajo')}`}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-3 px-11 py-6 rounded-full text-lg font-bold btn-wa-glow"
@@ -249,31 +208,25 @@ const grouped = categorias.slice(1).map(c => ({
 </div>
 
 <script>
-  // ── Filter / Vista ─────────────────────────────
-  const filterBtns  = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const viewTodas   = document.getElementById('view-todas')!;
-  const viewCat     = document.getElementById('view-categoria')!;
-  const gridCards   = viewCat.querySelectorAll<HTMLElement>('.gallery-card');
+  // ── Highlight nav botón activo al hacer scroll ──
+  const navBtns = document.querySelectorAll<HTMLAnchorElement>('.nav-cat-btn');
+  const catSections = document.querySelectorAll<HTMLElement>('[id^="cat-"]');
 
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cat = btn.dataset.categoria!;
-
-      if (cat === 'todas') {
-        viewTodas.classList.remove('hidden');
-        viewCat.classList.add('hidden');
-      } else {
-        viewTodas.classList.add('hidden');
-        viewCat.classList.remove('hidden');
-        gridCards.forEach(card => {
-          card.style.display = card.dataset.categoria === cat ? '' : 'none';
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const key = e.target.id.replace('cat-', '');
+        navBtns.forEach(b => {
+          const isActive = b.dataset.cat === key;
+          b.style.background = isActive ? 'var(--color-accent)' : '';
+          b.style.color = isActive ? 'var(--color-bg-dark)' : '';
+          b.style.borderColor = isActive ? 'var(--color-accent)' : '';
         });
       }
     });
-  });
+  }, { threshold: 0.4 });
+
+  catSections.forEach(s => sectionObserver.observe(s));
 
   // ── Lightbox ────────────────────────────────────
   const lightbox        = document.getElementById('lightbox')!;
@@ -307,10 +260,6 @@ const grouped = categorias.slice(1).map(c => ({
   // Click on slider items
   document.querySelectorAll<HTMLElement>('.cat-slider-item').forEach(el => {
     el.addEventListener('click', () => openLightbox(el.dataset.src!, el.dataset.alt!, el.dataset.tipo!));
-  });
-  // Click on grid cards
-  gridCards.forEach(card => {
-    card.addEventListener('click', () => openLightbox(card.dataset.src!, card.dataset.alt!, card.dataset.tipo!));
   });
 
   document.getElementById('lightbox-close')!.addEventListener('click', closeLightbox);

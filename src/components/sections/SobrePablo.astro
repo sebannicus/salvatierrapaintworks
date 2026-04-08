@@ -1,5 +1,11 @@
 ---
 import WhatsAppButton from '../ui/WhatsAppButton.astro';
+
+const fotos = [
+  { src: '/quien-soy-pintura.webp',       alt: 'Pablo Salvatierra — Con máscara en obra' },
+  { src: '/quien-soy-pintura2.webp',      alt: 'Pablo Salvatierra — Con equipo Airless' },
+  { src: '/images/quien-soy-pintura-3.webp', alt: 'Pablo Salvatierra — El hombre detrás' },
+];
 ---
 
 <section
@@ -10,40 +16,74 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
   <div class="max-w-6xl mx-auto px-5">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Logo / imagen lado izquierdo -->
-      <div class="flex justify-center lg:justify-end">
-        <div class="relative">
-          <!-- Decorative ring -->
+      <!-- Carousel de fotos lado izquierdo -->
+      <div class="flex justify-center lg:justify-end reveal-left">
+        <div class="relative w-full max-w-sm">
+          <!-- Glow decorativo -->
           <div
-            class="absolute -inset-4 rounded-full opacity-20"
-            style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"
+            class="absolute -inset-6 rounded-3xl opacity-20 pointer-events-none"
+            style="background: radial-gradient(ellipse at center, var(--color-accent) 0%, transparent 70%);"
           ></div>
+
+          <!-- Carousel track -->
           <div
-            class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 shadow-2xl"
-            style="border-color: var(--color-accent);"
+            id="pablo-carousel"
+            class="relative overflow-hidden rounded-2xl shadow-2xl"
+            style="aspect-ratio: 4/5; border: 2px solid rgba(166,149,128,0.35);"
           >
-            <img
-              src="/images/logo-salvatierra.jpeg"
-              alt="Pablo Salvatierra — Fundador Salvatierra PaintWorks"
-              width="320"
-              height="320"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
+            {fotos.map((foto, i) => (
+              <img
+                src={foto.src}
+                alt={foto.alt}
+                class="pablo-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+                style={`opacity: ${i === 0 ? 1 : 0};`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+
+            <!-- Dots -->
+            <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10">
+              {fotos.map((_, i) => (
+                <button
+                  class="pablo-dot w-2 h-2 rounded-full transition-all duration-300"
+                  style={`background: ${i === 0 ? 'var(--color-accent)' : 'rgba(166,149,128,0.4)'};`}
+                  data-index={i}
+                  aria-label={`Foto ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <!-- Flechas -->
+            <button
+              id="pablo-prev"
+              class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center z-10 transition-opacity hover:opacity-100 opacity-70"
+              style="background: rgba(14,23,24,0.7); border: 1px solid rgba(166,149,128,0.3); color: var(--color-accent-mid);"
+              aria-label="Foto anterior"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button
+              id="pablo-next"
+              class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center z-10 transition-opacity hover:opacity-100 opacity-70"
+              style="background: rgba(14,23,24,0.7); border: 1px solid rgba(166,149,128,0.3); color: var(--color-accent-mid);"
+              aria-label="Siguiente foto"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
           </div>
 
-          <!-- Badge Australia -->
+          <!-- Badge regiones -->
           <div
             class="absolute -bottom-4 -right-4 px-4 py-2 rounded-full text-xs font-bold tracking-wide shadow-lg"
             style="background: var(--color-bg); color: var(--color-text-primary); font-family: var(--font-label); border: 2px solid var(--color-accent-mid);"
           >
-            🇦🇺 Formado en Australia
+            📍 RM · IV Región
           </div>
         </div>
       </div>
 
       <!-- Texto lado derecho -->
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6 reveal-right">
         <div>
           <p class="text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent); font-family: var(--font-label);">Quién soy</p>
           <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-6" style="font-family: var(--font-display); color: var(--color-text-light);">
@@ -54,12 +94,13 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
 
         <div class="flex flex-col gap-4 text-base leading-relaxed" style="color: rgba(240,232,212,0.75);">
           <p>
-            Tengo más de <strong style="color: var(--color-text-light); font-weight: 700;">10 años de experiencia</strong> en pintura profesional.
-            Aprendí en Australia trabajando en casas de alto valor con verdaderos profesionales de la industria — donde la calidad no es opcional.
+            Tengo más de <strong style="color: var(--color-text-light); font-weight: 700;">10 años de experiencia</strong> en pintura profesional,
+            trabajando en proyectos residenciales, comerciales e institucionales de alto estándar.
           </p>
           <p>
-            Actualmente realizo trabajos de la más alta calidad tanto en la <strong style="color: var(--color-text-light); font-weight: 700;">Región Metropolitana</strong>
-            como en la <strong style="color: var(--color-text-light); font-weight: 700;">Cuarta Región de Coquimbo</strong>.
+            Presto servicio en la <strong style="color: var(--color-text-light); font-weight: 700;">Región Metropolitana</strong>
+            y en la <strong style="color: var(--color-text-light); font-weight: 700;">Cuarta Región de Coquimbo</strong>.
+            Dos regiones, el mismo nivel de calidad y dedicación.
           </p>
           <p>
             Cada proyecto lo ejecuto <strong style="color: var(--color-text-light);">personalmente</strong>. No subcontrato, no delego.
@@ -70,8 +111,8 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
         <!-- Highlights rápidos -->
         <ul class="flex flex-col gap-3 mt-2">
           {[
-            'Formado con estándar internacional — Australia',
-            'Experto certificado en pintura Airless',
+            'Pintura de trabajo en RM y Cuarta Región',
+            'Tecnología Airless para acabados profesionales',
             'Más de 100 proyectos completados',
             'Trato directo: hablas siempre conmigo',
           ].map((item) => (
@@ -91,3 +132,35 @@ import WhatsAppButton from '../ui/WhatsAppButton.astro';
     </div>
   </div>
 </section>
+
+<script>
+  const slides = document.querySelectorAll<HTMLImageElement>('.pablo-slide');
+  const dots   = document.querySelectorAll<HTMLButtonElement>('.pablo-dot');
+  let current  = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(idx: number) {
+    slides[current].style.opacity = '0';
+    dots[current].style.background = 'rgba(166,149,128,0.4)';
+    current = (idx + slides.length) % slides.length;
+    slides[current].style.opacity = '1';
+    dots[current].style.background = 'var(--color-accent)';
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goTo(current + 1), 3500);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    startTimer();
+  }
+
+  document.getElementById('pablo-next')?.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+  document.getElementById('pablo-prev')?.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); resetTimer(); });
+  });
+
+  startTimer();
+</script>

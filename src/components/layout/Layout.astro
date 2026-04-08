@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import Header from './Header.astro';
 
 interface Props {
   title?: string;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const {
-  title = 'Salvatierra PaintWorks — Pintura Fina, Rápida y Detallada | RM y Cuarta Región',
+  title = 'Salvatierra Paintworks — Pintura Fina, Rápida y Detallada | RM y Cuarta Región',
   description = 'Servicio de pintura interior y exterior con tecnología Airless. +10 años de experiencia. Trato directo con el dueño Pablo Salvatierra. RM y IV Región de Coquimbo.',
   ogImage = '/images/logo-salvatierra.jpeg',
 } = Astro.props;
@@ -49,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Salvatierra PaintWorks",
+    "name": "Salvatierra Paintworks",
     "description": "Servicio de pintura interior y exterior con tecnología Airless. RM y Cuarta Región de Coquimbo, Chile.",
     "telephone": "+56995088570",
     "areaServed": "Región Metropolitana y Cuarta Región de Coquimbo, Chile",
@@ -80,12 +81,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </noscript>
   )}
 
+  <Header />
   <slot />
 
   <!-- Vercel Analytics -->
   <script>
     import { inject } from '@vercel/analytics';
     inject();
+  </script>
+
+  <!-- Scroll reveal -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+      .forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
